@@ -12,9 +12,11 @@ var cityTest = 'SanFrancisco,us'
 // http://api.openweathermap.org/data/2.5/weather?q=SanFrancisco,us&appid=83f61e001de33d8e3dfae71ec0234172
 var weatherHost = 'http://api.openweathermap.org/'
 var googleHost = 'https://maps.googleapis.com';
+var sqootHost = 'http://api.sqoot.com/v2/?api_key=';
+
 var queryWeather = weatherHost + '/data/2.5/weather?q=' + cityTest + '&appid=' + keys.weatherApi;
 var queryRestaurants = googleHost + '/maps/api/place/textsearch/json?query=restaurants%7bakery+in+' + cityTest + '&key=' + keys.google;
-
+var queryDeals = sqootHost + keys.sqoot + '&location=' + cityTest;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
